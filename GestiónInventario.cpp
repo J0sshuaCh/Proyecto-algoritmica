@@ -33,7 +33,7 @@ void eliminarArticulo (inventario objetos[], int& dimension, int& ultimoArticulo
     char nombreBuscar[30];
     bool encontrado = false;
 
-    cout<<"Ingrese el nombre del artículo que desea eliminar :";
+    cout<<"Ingrese el nombre del artÃ­culo que desea eliminar :";
     cin.getline(nombreBuscar, 30, '\n');
 
     for (int i = 0; i <dimension; ++i){
@@ -54,7 +54,7 @@ void eliminarArticulo (inventario objetos[], int& dimension, int& ultimoArticulo
         dimension = dimension - 1;
         cout<<"Objeto : "<<nombreBuscar<<" eliminado correctamente";
     }else{
-        cout<<"Objeto : "<<nombreBuscar<<" no se encontró dentro del inventario.";
+        cout<<"Objeto : "<<nombreBuscar<<" no se encontrÃ³ dentro del inventario.";
     }
     getch();
 }
@@ -65,12 +65,12 @@ void modificarArticulo(inventario objetos[], int dimension) {
     char nombreBuscar[30];
     bool encontrado = false;
 
-    cout << "Ingrese el nombre del artículo que desea modificar: ";
+    cout << "Ingrese el nombre del artÃ­culo que desea modificar: ";
     cin.getline(nombreBuscar, 30, '\n');
 
     for (int i = 0; i < dimension; ++i) {
         if (strcmp(objetos[i].nombre, nombreBuscar) == 0) {
-            cout << "Artículo encontrado. Ingrese los nuevos datos:\n";
+            cout << "ArtÃ­culo encontrado. Ingrese los nuevos datos:\n";
             cout << "Nuevo nombre: ";
             cin.getline(objetos[i].nombre, 30, '\n');
             cout << "Nueva cantidad: ";
@@ -92,7 +92,7 @@ void modificarCant(inventario objeto[], int cantidaadArt){
     double cantidad;
     bool encontrado = false;
 
-    cout<<"Ingrese el nombre del artículo que desea modificar: ";
+    cout<<"Ingrese el nombre del artÃ­culo que desea modificar: ";
     cin.getline(busqueda,30, '\n');
 
     for (int i = 0; i<cantidaadArt; ++i){
@@ -106,7 +106,7 @@ void modificarCant(inventario objeto[], int cantidaadArt){
         }
     }
     if (encontrado = false){
-        cout<<"No se encontró ningún articulo";
+        cout<<"No se encontrÃ³ ningÃºn articulo";
     }
 }
 void agregarArticulo(inventario objeto1[], int& cantidadArt, int& ultimoArticulo){
@@ -120,7 +120,7 @@ while(terminar == 'Y' || terminar == 'y'){
     cout<<endl<<"Ingrese la cantidad del objeto "<<"\""<<objeto1[ultimoArticulo].nombre<<"\" :";
     cin>>objeto1[ultimoArticulo].cantidad;
 /*    do{
-        cout<<endl<<"¿El objeto puede dejar residuo? Y/N"<<endl;
+        cout<<endl<<"Â¿El objeto puede dejar residuo? Y/N"<<endl;
         cin>>remanente;
         if (remanente == 'y' || remanente == 'Y'){
             objeto1[ultimoArticulo].remanente = true;
@@ -185,8 +185,8 @@ int main(){
     cargarDatos(objetos,dimension,ultimoArticulo,cantidadArt);
     while (true){
         guardarDatos(objetos,dimension,ultimoArticulo,cantidadArt);
-        cout<<"Bienvenido al inventario!"<<endl<<"Escoja su opción"<<endl;
-        cout<<"1. Agregar articulos"<<endl<<"2. Mostrar inventario"<<endl<<"3. Modificar Articulo"<<endl<<"4. Eliminar articulo"<<endl<<"5. Modificar cantidad de articulo"<<endl<<"6. Gestionar remantentes"<<endl<<"0. Volver al menú principal"<<endl;
+        cout<<"Bienvenido al inventario!"<<endl<<"Escoja su opciÃ³n"<<endl;
+        cout<<"1. Agregar articulos"<<endl<<"2. Mostrar inventario"<<endl<<"3. Modificar Articulo"<<endl<<"4. Eliminar articulo"<<endl<<"5. Modificar cantidad de articulo"<<endl<<"6. Gestionar remantentes"<<endl<<"0. Volver al menÃº principal"<<endl;
         cin>>menu;
         switch (menu){
             case 1: agregarArticulo(objetos,cantidadArt, ultimoArticulo);
