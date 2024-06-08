@@ -37,13 +37,13 @@ public:
 
 
 int mostrarMenu() {
-    cout << "\n----- Menú -----\n";
+    cout << "\n----- MenÃº -----\n";
     cout << "1. Mostrar habitaciones disponibles\n";
-    cout << "2. Reservar una habitación\n";
+    cout << "2. Reservar una habitaciÃ³n\n";
     cout << "3. Mostrar habitaciones ocupadas\n";
-    cout << "4. Liberar una habitación\n";
+    cout << "4. Liberar una habitaciÃ³n\n";
     cout << "5. Salir\n";
-    cout << "Seleccione una opción: ";
+    cout << "Seleccione una opciÃ³n: ";
 
     int opcion;
     cin >> opcion;
@@ -65,7 +65,7 @@ void mostrarHabitacionesOcupadas(const vector<Habitacion>& habitaciones) {
     bool encontrada = false;
     for (size_t i = 0; i < habitaciones.size(); ++i) {
         if (habitaciones[i].estaOcupada()) {
-            cout << "Habitación #" << habitaciones[i].getNumero() << " - Cliente: "
+            cout << "HabitaciÃ³n #" << habitaciones[i].getNumero() << " - Cliente: "
                  << habitaciones[i].getClienteNombre() << " (Documento: "
                  << habitaciones[i].getClienteDocumento() << ")\n";
             encontrada = true;
@@ -115,23 +115,23 @@ void cargarHabitaciones(vector<Habitacion>& habitaciones) {
         }
         archivo.close();
     } else {
-        cout << "No se pudo abrir el archivo para cargar los datos. Se iniciarán con los valores predeterminados.\n";
+        cout << "No se pudo abrir el archivo para cargar los datos. Se iniciarÃ¡n con los valores predeterminados.\n";
     }
 }
 
 void liberarHabitacion(vector<Habitacion>& habitaciones) {
     int numero;
-    cout << "Ingrese el número de la habitación a liberar: ";
+    cout << "Ingrese el nÃºmero de la habitaciÃ³n a liberar: ";
     cin >> numero;
     for (size_t i = 0; i < habitaciones.size(); ++i) {
         if (habitaciones[i].getNumero() == numero && habitaciones[i].estaOcupada()) {
             habitaciones[i].liberar();
-            cout << "Habitación #" << numero << " liberada con éxito.\n";
+            cout << "HabitaciÃ³n #" << numero << " liberada con Ã©xito.\n";
             guardarHabitaciones(habitaciones);
             return;
         }
     }
-    cout << "No se encontró una habitación ocupada con ese número.\n";
+    cout << "No se encontrÃ³ una habitaciÃ³n ocupada con ese nÃºmero.\n";
 }
 
 int main() {
@@ -157,7 +157,7 @@ int main() {
                 cout << "\nHabitaciones Disponibles:\n";
                 for (size_t i = 0; i < habitaciones.size(); ++i) {
                     if (!habitaciones[i].estaOcupada()) {
-                        cout << "Habitación #" << habitaciones[i].getNumero() << " (Tarifa: S/. "
+                        cout << "HabitaciÃ³n #" << habitaciones[i].getNumero() << " (Tarifa: S/. "
                              << habitaciones[i].getTarifa() << ")\n";
                     }
                 }
@@ -171,8 +171,8 @@ int main() {
                     cout << "Ingrese el documento del cliente: ";
                     cin >> documento;
                     habitacionDisponible->reservar(nombre, documento);
-                    cout << "Habitación #" << habitacionDisponible->getNumero()
-                         << " reservada con éxito para " << nombre << "!\n";
+                    cout << "HabitaciÃ³n #" << habitacionDisponible->getNumero()
+                         << " reservada con Ã©xito para " << nombre << "!\n";
                     guardarHabitaciones(habitaciones);
                 } else {
                     cout << "No hay habitaciones disponibles para reservar.\n";
@@ -189,7 +189,7 @@ int main() {
                 cout << "Saliendo del programa.\n";
                 break;
             default:
-                cout << "Opción inválida. Intente nuevamente.\n";
+                cout << "OpciÃ³n invÃ¡lida. Intente nuevamente.\n";
                 break;
         }
 
